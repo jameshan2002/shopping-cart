@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./styles/app.css";
 import Nav from "./components/Nav.js";
@@ -8,6 +9,14 @@ import ItemDetail from "./components/ItemDetail";
 import Cart from "./components/Cart";
 
 function App() {
+  let [cartItems, setCartItems] = useState([]);
+
+  const resetCart = () => {
+    setCartItems([]);
+  };
+  const getCartItems = () => {};
+  const addCart = () => {};
+  const removeCart = () => {};
   return (
     <Router>
       <div className="App">

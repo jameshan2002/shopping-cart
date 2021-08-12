@@ -16,7 +16,7 @@ function Nav() {
           <li className="p-4">Contact</li>
         </Link>
         <Link to="/cart">
-          <li className="p-4">Cart</li>
+          <li className="p-4">Cart (1)</li>
         </Link>
       </ul>
     </nav>

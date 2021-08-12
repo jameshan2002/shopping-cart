@@ -21,9 +21,22 @@ function ItemDetail({ match }) {
         {item && <h1 className="mb-2 font-bold text-2xl">{item.title}</h1>}
         {item && <h3 className="mb-2 font-semibold text-xl">${item.price}</h3>}
         {item && <p className="mb-4 text-md">{item.description}</p>}
-        <button className="bg-gray-800 text-white px-4 py-2 rounded-lg">
-          Add to Cart
-        </button>
+        <form>
+          <select id="quantity" name="quantity" className="mr-5">
+            <option value="1">Qty: 1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+
+          <button
+            type="submit"
+            className="bg-gray-800 text-white px-4 py-2 rounded-lg"
+          >
+            Add to Cart
+          </button>
+        </form>
       </div>
     </div>
   );
