@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-function Nav() {
+function Nav({ getCartItems }) {
+  let itemsInCart = getCartItems();
   return (
     <nav>
       <Link to="/">
@@ -16,7 +17,7 @@ function Nav() {
           <li className="p-4">Contact</li>
         </Link>
         <Link to="/cart">
-          <li className="p-4">Cart (1)</li>
+          <li className="p-4">Cart ({itemsInCart})</li>
         </Link>
       </ul>
     </nav>
