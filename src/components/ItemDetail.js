@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
 
-export const ItemDetail = ({ match, addItem }) => {
+const ItemDetail = ({ itemId, addItem }) => {
   const [item, setItem] = useState(null);
 
   useEffect(() => {
     async function fetchItem() {
-      const data = await fetch(
-        `https://fakestoreapi.com/products/${match.params.id}`
-      );
+      const data = await fetch(`https://fakestoreapi.com/products/${itemId}`);
       const scopes = await data.json();
       setItem(scopes);
     }
     fetchItem();
   }, []);
+
+  function handleClick() {
+    addItem({ ...item, quantity: 1 });
+  }
 
   return (
     <div className="flex content-center items-start w-3/5 mx-auto mt-16">
@@ -34,9 +36,8 @@ export const ItemDetail = ({ match, addItem }) => {
           </select> */}
 
         <button
-          type="button"
           className="bg-gray-800 text-white px-4 py-2 rounded-lg"
-          onClick={() => addItem(item)}
+          onClick={handleClick}
         >
           Add to Cart
         </button>

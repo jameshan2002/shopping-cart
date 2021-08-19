@@ -17,7 +17,7 @@ function Nav({ getCartItems }) {
           <li className="p-4">Contact</li>
         </Link>
         <Link to="/cart">
-          <li className="p-4">Cart ({itemsInCart})</li>
+          <li className="p-4">Cart ({itemsInCart ? `${itemsInCart}` : 0})</li>
         </Link>
       </ul>
     </nav>

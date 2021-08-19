@@ -9,27 +9,44 @@ import ItemDetail from "./components/ItemDetail";
 import Cart from "./components/Cart";
 
 function App() {
-  const [cardItems, setCardItems] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
+
   const getCartItems = () => {
-    return cardItems.map((item) => item.quantity).reduce((a, b) => a + b, 0);
-  };
-  const addItem = (id, number = 1) => {
-    let list = Object.assign([], cardItems);
-    list.push({
-      id: id,
-      number: number,
-    });
-    setCardItems(list);
+    return cartItems.map((item) => item.quantity).reduce((a, b) => a + b, 0);
   };
 
-  const clearCart = () => {
-    setCardItems([]);
+  const addItem = (item) => {
+    let itemExist = cartItems.find((cartItem) => cartItem.id === item.id);
+    if (itemExist) {
+      setCartItems(
+        cartItems.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...itemExist, quantity: itemExist.quantity + 1 }
+            : cartItem
+        )
+      );
+    } else {
+      setCartItems([...cartItems, { ...item, quantity: 1 }]);
+    }
   };
 
-  const removeItem = (index) => {
-    let list = Object.assign([], cardItems);
-    list.splice(index, 1);
-    setCardItems(list);
+  const resetCart = () => {
+    setCartItems([]);
+  };
+
+  const removeItem = (item) => {
+    let itemToRemove = cartItems.find((cartItem) => cartItem.id === item.id);
+    if (itemToRemove.quantity === 1) {
+      setCartItems(cartItems.filter((cartItem) => cartItem.id !== item.id));
+    } else {
+      setCartItems(
+        cartItems.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...itemToRemove, quantity: itemToRemove.quantity - 1 }
+            : cartItem
+        )
+      );
+    }
   };
 
   return (
@@ -42,19 +59,25 @@ function App() {
           <Route path="/contact" component={Contact} />
           <Route
             path="/cart"
-            component={Cart}
+            //component={Cart}
             render={() => (
               <Cart
-                cardItems={cardItems}
-                clearCart={clearCart}
+                cartItems={cartItems}
                 removeItem={removeItem}
+                addItem={addItem}
+                resetCart={resetCart}
               />
             )}
           />
           <Route
             path="/products/:id"
-            component={ItemDetail}
-            render={(props) => <ItemDetail {...props} addItem={addItem} />}
+            //component={ItemDetail}
+            render={(routeProps) => (
+              <ItemDetail
+                itemId={routeProps.match.params.id}
+                addItem={addItem}
+              />
+            )}
           />
         </Switch>
       </div>
