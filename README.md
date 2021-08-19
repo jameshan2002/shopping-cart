@@ -1,4 +1,4 @@
-# Shopping-Cart
+# Shopping Cart
 
 ### What is made with
 - React.js
