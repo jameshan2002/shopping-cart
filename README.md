@@ -1,7 +1,8 @@
 # Shopping Cart
 
-### **!! DEMO IMAGE AT THE BOTTOM !!**
+
 - [Test Demo](https://jameshan2002.github.io/shopping-cart/)
+- **!! DEMO IMAGE AT THE BOTTOM !!**
 
 ### What is made with
 - React.js
