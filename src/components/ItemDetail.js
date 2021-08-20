@@ -22,10 +22,10 @@ const ItemDetail = ({ itemId, addItem }) => {
         <img
           src={item.image}
           alt=""
-          className="w-5/5 md:w-4/6 sm:w-2/5 p-0 sm:p-4 mr-auto sm:mr-10 text-center"
+          className="w-5/5 sm:w-4/6 md:w-2/5 p-0 sm:p-4 mr-auto sm:mr-10 text-center"
         />
       )}
-      <div className="text-left p-0 sm:p-4 mt-10 sm:mt-auto">
+      <div className="text-left p-0 sm:p-4 mt-10 sm:mt-0">
         {item && (
           <h1 className="mb-2 font-bold text-2xl sm:text-3xl">{item.title}</h1>
         )}

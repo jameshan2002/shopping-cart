@@ -29,7 +29,7 @@ function Products(props) {
           <img
             src={key.image}
             alt=""
-            className="p-0 sm:p-4 w-36 sm:w-72 h-48 sm:h-60 mb-4 object-scale-down"
+            className="p-0 sm:p-4 w-36 sm:w-72 h-48 sm:h-60 mb-4 object-scale-down mx-auto"
           />
           <h1 className="font-semibold text-left mb-1 text-lg ">
             <Link

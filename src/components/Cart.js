@@ -38,7 +38,7 @@ function Cart({ cartItems, removeItem, addItem, resetCart }) {
                       ${price}
                     </p>
                     <h3 className="text-md sm:text-lg ">Quantity</h3>
-                    <div className="flex justify-between sm:justify-evenly items-center w-2/6 sm:w-4/6 sm:w-20 -ml-0 sm:-ml-2.5">
+                    <div className="flex justify-between sm:justify-around items-center w-14 sm:w-20 -ml-0 sm:-ml-2.5">
                       <button onClick={() => removeItem(cartItem)}>-</button>
                       <p>{quantity}</p>
                       <button onClick={() => addItem(cartItem)}>+</button>
