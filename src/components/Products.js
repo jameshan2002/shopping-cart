@@ -20,17 +20,20 @@ function Products(props) {
   // };
 
   return (
-    <div className="flex flex-wrap justify-between items-center mx-auto p-4 w-4/5 h-screen mt-14">
+    <div className="flex flex-wrap justify-between items-center text-center mx-auto p-4 w-3/5 sm:w-4/5 h-screen mt-14">
       {items.map((key) => (
-        <div key={key.id} className="p-8 mx-auto w-96 h-3/6">
+        <div
+          key={key.id}
+          className="p-0 sm:p-8 mx-auto w-48 sm:w-96 h-5/6 sm:h-3/6"
+        >
           <img
             src={key.image}
             alt=""
-            className="p-4 w-72 h-60 mb-4 object-scale-down"
+            className="p-0 sm:p-4 w-36 sm:w-72 h-48 sm:h-60 mb-4 object-scale-down"
           />
-          <h1 className="font-semibold text-left mb-1 text-lg">
+          <h1 className="font-semibold text-left mb-1 text-lg ">
             <Link
-              to={`/products/${key.id}`}
+              to={`/shopping-cart/products/${key.id}`}
               render={() => <ItemDetail addItem={props.addItem} />}
             >
               {key.title}

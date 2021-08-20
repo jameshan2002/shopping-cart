@@ -54,11 +54,11 @@ function App() {
       <div className="App">
         <Nav getCartItems={getCartItems} />
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/products" exact component={Products} />
-          <Route path="/contact" component={Contact} />
+          <Route path="/shopping-cart/" exact component={Home} />
+          <Route path="/shopping-cart/products" exact component={Products} />
+          <Route path="/shopping-cart/contact" component={Contact} />
           <Route
-            path="/cart"
+            path="/shopping-cart/cart"
             //component={Cart}
             render={() => (
               <Cart
@@ -70,7 +70,7 @@ function App() {
             )}
           />
           <Route
-            path="/products/:id"
+            path="/shopping-cart/products/:id"
             //component={ItemDetail}
             render={(routeProps) => (
               <ItemDetail

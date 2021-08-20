@@ -12,7 +12,9 @@ function Cart({ cartItems, removeItem, addItem, resetCart }) {
   return (
     <Fade cascade>
       <div>
-        <h1 className="text-5xl font-semibold mt-20">Your Cart.</h1>
+        <h1 className="text-4xl sm:text-5xl font-semibold mt-10 sm:mt-20">
+          Your Cart.
+        </h1>
         {/* <hr className="max-w-xl mx-auto mt-7" /> */}
         <div className="mt-10">
           {cartItems.map((cartItem) => {
@@ -23,18 +25,20 @@ function Cart({ cartItems, removeItem, addItem, resetCart }) {
                 <div className="flex flex-wrap justify-start items-start mx-auto p-2 w-4/6 border-2 rounded-lg mb-10">
                   <div>
                     <img
-                      className="p-4 w-64 h-56 mb-4 object-scale-down"
+                      className="p-4 w-6/6 sm:w-64 h-56 mb-4 object-scale-down"
                       alt=""
                       src={image}
                     />
                   </div>
-                  <div className="text-left mt-7 ml-10">
-                    <h1 className="mb-2 font-bold text-xl max-w-3xl">
+                  <div className="text-left mt-7 ml-1 sm:ml-10 ">
+                    <h1 className="mb-2 font-bold text-lg sm:text-xl max-w-3xl">
                       {title}
                     </h1>
-                    <p className="mb-2 font-semibold text-lg mb-5">${price}</p>
-                    <h3>Quantity</h3>
-                    <div className="flex justify-evenly items-center w-20 -ml-2.5">
+                    <p className="mb-2 font-semibold text-md sm:text-lg mb-5">
+                      ${price}
+                    </p>
+                    <h3 className="text-md sm:text-lg ">Quantity</h3>
+                    <div className="flex justify-between sm:justify-evenly items-center w-2/6 sm:w-4/6 sm:w-20 -ml-0 sm:-ml-2.5">
                       <button onClick={() => removeItem(cartItem)}>-</button>
                       <p>{quantity}</p>
                       <button onClick={() => addItem(cartItem)}>+</button>
