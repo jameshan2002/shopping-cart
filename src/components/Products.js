@@ -20,11 +20,11 @@ function Products(props) {
   // };
 
   return (
-    <div className="flex flex-wrap justify-between items-center text-center mx-auto p-4 w-4/5 xl:w-3/5 h-screen mt-14">
+    <div className="flex flex-wrap justify-between items-center text-center mx-auto p-4 w-4/5 lg:w-3/5 xl:w-3/5 h-screen mt-14">
       {items.map((key) => (
         <div
           key={key.id}
-          className="p-0 sm:p-8 mx-auto w-64 sm:w-72 h-auto mb-10 sm:mb-0"
+          className="p-0 sm:p-8 mx-auto w-64 sm:w-72 h-auto lg:h-1/2 md:h-2/5 mb-12"
         >
           <img
             src={key.image}
