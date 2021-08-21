@@ -13,6 +13,7 @@ const ItemDetail = ({ itemId, addItem }) => {
   }, []);
 
   function handleClick() {
+    alert("Item added to cart!");
     addItem({ ...item, quantity: 1 });
   }
 

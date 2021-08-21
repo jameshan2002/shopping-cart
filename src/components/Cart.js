@@ -22,10 +22,10 @@ function Cart({ cartItems, removeItem, addItem, resetCart }) {
             return (
               <>
                 {/* <hr className="max-w-4xl mx-auto" /> */}
-                <div className="flex flex-wrap justify-start items-start mx-auto p-2 w-4/6 border-2 rounded-lg mb-10">
+                <div className="flex flex-wrap justify-center lg:justify-start items-start mx-auto p-2 w-4/6 border-2 rounded-lg mb-10">
                   <div>
                     <img
-                      className="p-4 w-6/6 sm:w-64 h-56 mb-4 object-scale-down"
+                      className="p-4 w-6/6 md:w-56 sm:w-64 h-56 mb-4 object-scale-down"
                       alt=""
                       src={image}
                     />
@@ -50,7 +50,7 @@ function Cart({ cartItems, removeItem, addItem, resetCart }) {
           })}
         </div>
         {cartItems.length > 0 ? (
-          <div className="text-right mx-auto p-4 w-4/6 ">
+          <div className="text-center sm:text-right mx-auto p-4 w-4/6 ">
             <h3 className="text-2xl font-semibold mb-3">
               Total: ${Math.round(cartTotal * 100) / 100} USD
             </h3>
