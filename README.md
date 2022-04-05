@@ -1,7 +1,7 @@
 # Shopping Cart
 
 
-- [Test Demo](https://jameshan2002.github.io/shopping-cart/)
+- [Test Demo](https:/notjameshan.github.io/shopping-cart/)
 - **!! DEMO IMAGE AT THE BOTTOM !!**
 
 ## What is made with
